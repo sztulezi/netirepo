@@ -30,7 +30,10 @@ public class BookService {
 	}
 
 	public Long create(Book book) {
-		return bookRepository.save(book).getId();
+		Book saved = bookRepository.save(book);
+		System.out.println("saved: " + saved);
+		System.out.println("book == saved: " + (book == saved));
+		return saved.getId();
 	}
 
 	public void update(Book book) {
